@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameInventory
 {
-    internal class ItemFactory
+    public class ItemFactory
     {
+
     }
 }

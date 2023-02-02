@@ -59,5 +59,29 @@ namespace GameInventory
         }
         #endregion
 
+        #region ListItems()
+        public string ListItems()
+        {
+
+        }
+        #endregion
+
+        #region ListWeapons()
+        public string ListWeapons()
+        {
+            string info = "\nWeapons ------------------------------------------";
+            // Loop that looks at all items in the list Contents
+            foreach (Item item in Contents)
+            {
+                // loop that checks if an item is a Weapon then that is what is added to the string to print
+                if (item is Weapon)
+                {
+                    info += $"\n{item}";
+                    info += "\n------------------------------------------------";
+                }
+            }
+            return info;
+        }
+        #endregion
     }
 }

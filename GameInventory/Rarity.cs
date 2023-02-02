@@ -9,7 +9,7 @@ namespace GameInventory
     /// <summary>
     /// 
     /// </summary>
-    internal enum Rarity
+    public enum Rarity
     {
         Common,
         Uncommon,
