@@ -1,4 +1,12 @@
-﻿using System;
+﻿///////////////////////////////////////////////////////////////////////////////
+//
+// Author: Jason Self, selfj1@etsu.edu
+// Course: CSCI-2210-001 - Data Structures
+// Assignment: Project 1
+// Description: Creates a backpack of items using a class called ItemFactory
+//
+///////////////////////////////////////////////////////////////////////////////
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +28,17 @@ namespace GameInventory
         protected DamageType _damageType { get; set; }
         #endregion
 
+        #region SetDamageType()
         /// <summary>
-        /// 
+        /// One line setter method that sets the damage type of a weapon
         /// </summary>
-        /// <param name="damageType"></param>
+        /// <param name="damageType">damage type</param>
         public void SetDamageType(DamageType damageType) => _damageType = damageType;
+        #endregion
 
         #region Parameterized()
         /// <summary>
-        /// Parameterized Constructor that also uses the Clues parameterized constructor
+        /// Parameterized Constructor that also uses the Clues parameterized constructor and sets the Weapons damage and damage type to default values but makes the damage a random amount from 1-50
         /// </summary>
         /// <param name="name">used to set Name from the parent class Clue</param>
         /// <param name="description">used to set the Description from the parent class Clue</param>
@@ -46,7 +56,7 @@ namespace GameInventory
 
         #region ToString()
         /// <summary>
-        /// formats the output to the screen for Weapon class
+        /// formats the output to the screen for Weapon class using the parent classes ToString and adding to it 
         /// </summary>
         /// <returns>how the output should be displayed to the screen</returns>
         public override string ToString()
