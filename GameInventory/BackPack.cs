@@ -1,4 +1,12 @@
-﻿using System;
+﻿///////////////////////////////////////////////////////////////////////////////
+//
+// Author: Jason Self, selfj1@etsu.edu
+// Course: CSCI-2210-001 - Data Structures
+// Assignment: Project 1
+// Description: Creates a backpack of items using a class called ItemFactory
+//
+///////////////////////////////////////////////////////////////////////////////
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +14,9 @@ using System.Threading.Tasks;
 
 namespace GameInventory
 {
+    /// <summary>
+    /// Creates the class BackPack with all its elements
+    /// </summary>
     public class BackPack
     {
         #region Attributes
@@ -43,13 +54,13 @@ namespace GameInventory
         /// <returns>how clues string info should be formatted</returns>
         public string ListClues()
         {
-            string info = "\nClues-----------------------------------";
+            string info = "\n\nClues-------------------------------------------";
             
             // Loop that looks at all items in the list Contents
             foreach (Item item in Contents)
             {
-                // loop that checks if an item is a Clue then that is what is added to the string to print
-                if (item is Clue)
+                // loop that checks if an item is not a weapon then that is what is added to the string to print
+                if (item is not Weapon)
                 {
                     info += $"\n{item}";
                     info += "\n------------------------------------------------";
@@ -60,16 +71,26 @@ namespace GameInventory
         #endregion
 
         #region ListItems()
+        /// <summary>
+        /// Creates the ListItems method and calls the ListWeapons method and the ListClues method
+        /// </summary>
+        /// <returns>how items string info should be formatted</returns>
         public string ListItems()
         {
-
+            string info = ListWeapons();
+            info += ListClues();
+            return info;
         }
         #endregion
 
         #region ListWeapons()
+        /// <summary>
+        /// Creates the ListWeapons method and formats it to display to the screen
+        /// </summary>
+        /// <returns>how weapons string info should be formatted</returns>
         public string ListWeapons()
         {
-            string info = "\nWeapons ------------------------------------------";
+            string info = "\nWeapons -----------------------------------------";
             // Loop that looks at all items in the list Contents
             foreach (Item item in Contents)
             {
